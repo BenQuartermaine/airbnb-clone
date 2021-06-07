@@ -1,0 +1,18 @@
+<%= link_to 'Add Flat', new_flat_path, class: 'btn btn-primary' %>
+
+<div class="d-flex justify-content-around flex-wrap">
+  <% @flats.each do |f| %>
+    <div class="card m-3" style="max-width: 16rem;">
+        <img src="https://source.unsplash.com/random" width="100%" alt="unsplash random">
+        <div class="card-body">
+          <h5><%= f.address %></h5>
+          <p><%= f.description %></p>
+          <div class="d-flex justify-content-between">
+            <%= f.capacity %>
+            <%= f.price %>
+          </div>
+          <%= link_to 'View', flat_path(f), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
